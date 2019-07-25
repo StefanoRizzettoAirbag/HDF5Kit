@@ -81,7 +81,7 @@ class AttributeTests: XCTestCase {
         
         do {
             let writeData = "Scalar text"
-            guard let attribute = try group.writeScalarStringAttribute("attribute", writeData) else {
+            guard let attribute = try group.writeScalarAttribute("attribute", writeData) else {
                 XCTFail()
                 return
             }

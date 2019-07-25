@@ -129,7 +129,8 @@ public extension AttributedType {
     }
     
     /// Creates and Writes a `String` scalar attribute.
-    public func writeScalarStringAttribute(_ name: String, _ value: String) throws -> StringAttribute? {
+    @discardableResult
+    public func writeScalarAttribute(_ name: String, _ value: String) throws -> StringAttribute? {
         guard let data = value.data(using: .utf8, allowLossyConversion: false) else {
             return nil
         }

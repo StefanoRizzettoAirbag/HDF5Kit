@@ -61,6 +61,7 @@ public extension AttributedType {
     }
     
     /// Creates and Writes a `Float` attribute.
+    @discardableResult
     public func writeScalarAttribute(_ name: String, _ value: Float) throws -> FloatAttribute? {
         let datatype = Datatype(nativeType: .float)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
