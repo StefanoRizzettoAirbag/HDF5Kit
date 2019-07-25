@@ -30,7 +30,14 @@ open class FloatAttribute: Attribute {
 }
 
 
-public extension GroupType {
+public extension AttributedType {
+    
+    /// Get `Float` attribute scalar or first value
+    func floatAttributeValue(_ name: String) -> Float? {
+        guard let values = try? openFloatAttribute(name)?.read() else { return nil }
+        return values?.first
+    }
+    
     /// Creates a `Float` attribute.
     public func createFloatAttribute(_ name: String, dataspace: Dataspace) -> FloatAttribute? {
         guard let datatype = Datatype(type: Float.self) else {
@@ -52,4 +59,12 @@ public extension GroupType {
         }
         return FloatAttribute(id: attributeID)
     }
+    
+    /// Creates and Writes a `Float` attribute.
+    public func writeScalarAttribute(_ name: String, _ value: Float) throws -> FloatAttribute? {
+        let datatype = Datatype(nativeType: .float)
+        guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
+        return FloatAttribute(id: id)
+    }
+    
 }

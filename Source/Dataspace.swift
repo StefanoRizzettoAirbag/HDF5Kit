@@ -26,6 +26,11 @@ public class Dataspace {
     }
 
     public internal(set) var selectionDims: [Int]
+    
+    /// Create a scalar Dataspace
+    convenience public init() {
+        self.init(id: H5Screate(H5S_SCALAR))
+    }
 
     /// Create a Dataspace
     public init(dims: [Int]) {

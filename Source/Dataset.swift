@@ -8,7 +8,7 @@
     import CHDF5
 #endif
 
-open class Dataset: Object {
+open class Dataset: Object, AttributedType {
     /// The address in the file of the dataset or `nil` if the offset is undefined. That address is expressed as the offset in bytes from the beginning of the file.
     public var offset: Int? {
         let offset = H5Dget_offset(id)

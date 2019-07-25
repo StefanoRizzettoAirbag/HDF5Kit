@@ -12,7 +12,7 @@ public protocol GroupType {
     var id: hid_t { get }
 }
 
-public class Group: Object, GroupType {
+public class Group: Object, GroupType, AttributedType {
     /// Create a group
     public func createGroup(_ name: String) -> Group {
         let groupID = name.withCString{

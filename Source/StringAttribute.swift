@@ -68,7 +68,7 @@ open class StringAttribute: Attribute {
                 let string = String(cString: pointer.baseAddress! + index)
                 strings.append(string)
                 index += string.lengthOfBytes(using: .ascii)
-                while index <= size && pointer[index] == 0 {
+                while index < size && pointer[index] == 0 {
                     index += 1
                 }
             }
@@ -97,7 +97,14 @@ open class StringAttribute: Attribute {
 }
 
 
-public extension GroupType {
+public extension AttributedType {
+    
+    /// Get `String` attribute scalar or first value
+    func stringAttributeValue(_ name: String) -> String? {
+        guard let values = try? openStringAttribute(name)?.read() else { return nil }
+        return values?.first
+    }
+    
     /// Creates a `String` attribute.
     public func createStringAttribute(_ name: String) -> StringAttribute? {
         guard let datatype = Datatype(type: String.self) else {
@@ -118,6 +125,30 @@ public extension GroupType {
         guard attributeID >= 0 else {
             return nil
         }
+        return StringAttribute(id: attributeID)
+    }
+    
+    /// Creates and Writes a `String` scalar attribute.
+    public func writeScalarStringAttribute(_ name: String, _ value: String) throws -> StringAttribute? {
+        guard let data = value.data(using: .utf8, allowLossyConversion: false) else {
+            return nil
+        }
+        
+        let datatype = Datatype.createString(size: data.count)
+        let dataspace = Dataspace()
+        let attributeID = name.withCString { name in
+            return H5Acreate2(id, name, datatype.id, dataspace.id, 0, 0)
+        }
+        guard attributeID >= 0 else {
+            throw Error.ioError
+        }
+        
+        try value.utf8CString.withUnsafeBufferPointer { pointer in
+            guard H5Awrite(attributeID, datatype.id, pointer.baseAddress) >= 0 else {
+                throw Error.ioError
+            }
+        }
+        
         return StringAttribute(id: attributeID)
     }
 }

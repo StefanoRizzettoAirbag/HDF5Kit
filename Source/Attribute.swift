@@ -8,6 +8,10 @@
     import CHDF5
 #endif
 
+public protocol AttributedType {
+    var id: hid_t { get }
+}
+
 open class Attribute {
     public internal(set) var id: hid_t = -1
 
@@ -55,4 +59,26 @@ open class Attribute {
             throw Error.ioError
         }
     }
+}
+
+extension AttributedType {
+    
+    func writeScalarAttribute<T>(_ name: String, _ value: T, datatype: Datatype) throws -> hid_t? {
+        let dataspace = Dataspace()
+        let attributeID = name.withCString { name in
+            return H5Acreate2(id, name, datatype.id, dataspace.id, 0, 0)
+        }
+        guard attributeID >= 0 else {
+            throw Error.ioError
+        }
+        
+        var int = value
+        let pointer = UnsafeRawPointer(&int)
+        guard H5Awrite(attributeID, datatype.id, pointer) >= 0 else {
+            throw Error.ioError
+        }
+        
+        return attributeID
+    }
+    
 }

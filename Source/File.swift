@@ -8,7 +8,7 @@
     import CHDF5
 #endif
 
-public class File: GroupType {
+public class File: GroupType, AttributedType {
     public enum CreateMode: UInt32 {
         case truncate  = 0x02 // Overwrite existing files
         case exclusive = 0x04 // Fail if file already exists

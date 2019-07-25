@@ -30,7 +30,14 @@ open class DoubleAttribute: Attribute {
 }
 
 
-public extension GroupType {
+public extension AttributedType {
+    
+    /// Get `Double` attribute scalar or first value
+    func doubleAttributeValue(_ name: String) -> Double? {
+        guard let values = try? openDoubleAttribute(name)?.read() else { return nil }
+        return values?.first
+    }
+    
     /// Creates a `Double` attribute.
     public func createDoubleAttribute(_ name: String, dataspace: Dataspace) -> DoubleAttribute? {
         guard let datatype = Datatype(type: Double.self) else {
@@ -52,4 +59,12 @@ public extension GroupType {
         }
         return DoubleAttribute(id: attributeID)
     }
+    
+    /// Creates and Writes a `Double` attribute.
+    public func writeScalarAttribute(_ name: String, _ value: Double) throws -> DoubleAttribute? {
+        let datatype = Datatype(nativeType: .double)
+        guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
+        return DoubleAttribute(id: id)
+    }
+    
 }
