@@ -48,6 +48,29 @@ class AttributeTests: XCTestCase {
         }
     }
 
+    func testWriteReadBool() {
+        let filePath = tempFilePath()
+        guard let file = File.create(filePath, mode: .truncate) else {
+            fatalError("Failed to create file")
+        }
+        let group = file.createGroup("group")
+        XCTAssertEqual(group.name, "/group")
+        
+        let dataspace = Dataspace(dims: [4])
+        guard let attribute = group.createBoolAttribute("attribute", dataspace: dataspace) else {
+            XCTFail()
+            return
+        }
+        
+        do {
+            let writeData = [true, false, true, false]
+            try attribute.write(writeData)
+            XCTAssertEqual(try attribute.read(), writeData)
+        } catch {
+            XCTFail()
+        }
+    }
+
     func testWriteReadString() {
         let filePath = tempFilePath()
         guard let file = File.create(filePath, mode: .truncate) else {
@@ -145,6 +168,33 @@ class AttributeTests: XCTestCase {
             }
             XCTAssertEqual(try attribute.read(), [writeData])
             XCTAssertEqual(group.doubleAttributeValue("Double"), writeData)
+        } catch {
+            XCTFail()
+        }
+        
+    }
+    
+    func testWriteReadDelete() {
+        let filePath = tempFilePath()
+        guard let file = File.create(filePath, mode: .truncate) else {
+            fatalError("Failed to create file")
+        }
+        let group = file.createGroup("group")
+        XCTAssertEqual(group.name, "/group")
+        
+        
+        do {
+            let writeData: Int32 = 678
+            guard try group.writeScalarAttribute("Int32", writeData) != nil else {
+                XCTFail()
+                return
+            }
+            XCTAssertEqual(Int32(group.intAttributeValue("Int32")!), writeData)
+            let eraseData: Int32? = nil
+            XCTAssertNil(try group.writeScalarAttribute("Int32", eraseData))
+            
+            let deletedAttribute = group.intAttributeValue("Int32")
+            XCTAssertNil(deletedAttribute)
         } catch {
             XCTFail()
         }

@@ -22,6 +22,7 @@ public enum NativeType {
     case int64
     case uint64
     case opaque
+    case bool
 
     /// Return the Swift type corresponding to the NativeType
     public var type: Any.Type {
@@ -39,6 +40,7 @@ public enum NativeType {
         case .int64: return Swift.Int64.self
         case .uint64: return Swift.UInt64.self
         case .opaque: return Any.self
+        case .bool: return Swift.Bool.self
         }
     }
 
@@ -58,6 +60,7 @@ public enum NativeType {
         case .int64: return H5T_NATIVE_INT64_g
         case .uint64: return H5T_NATIVE_UINT64_g
         case .opaque: return H5T_NATIVE_OPAQUE_g
+        case .bool: return H5T_NATIVE_HBOOL_g
         }
     }
 
@@ -87,6 +90,8 @@ public enum NativeType {
             self = .int64
         } else if type == Swift.UInt64.self {
             self = .uint64
+        } else if type == Swift.Bool.self {
+            self = .bool
         } else {
             return nil
         }

@@ -39,7 +39,7 @@ public extension AttributedType {
     }
     
     /// Creates a `Int` attribute.
-    public func createIntAttribute(_ name: String, dataspace: Dataspace) -> IntAttribute? {
+    func createIntAttribute(_ name: String, dataspace: Dataspace) -> IntAttribute? {
         guard let datatype = Datatype(type: Int.self) else {
             return nil
         }
@@ -50,7 +50,7 @@ public extension AttributedType {
     }
 
     /// Opens an `Int` attribute.
-    public func openIntAttribute(_ name: String) -> IntAttribute? {
+    func openIntAttribute(_ name: String) -> IntAttribute? {
         let attributeID = name.withCString{ name in
             return H5Aopen(id, name, 0)
         }
@@ -62,7 +62,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `Int` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: Int?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: Int?) throws -> IntAttribute? {
         let datatype = Datatype.createInt()
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -70,7 +70,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `Int8` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: Int8?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: Int8?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .int8)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -78,7 +78,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `Int16` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: Int16?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: Int16?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .int16)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -86,7 +86,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `Int32` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: Int32?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: Int32?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .int32)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -94,7 +94,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `Int64` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: Int64?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: Int64?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .int64)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -102,7 +102,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `UInt` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: UInt?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: UInt?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .uint)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -110,7 +110,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `UInt8` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: UInt8?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: UInt8?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .uint8)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -118,7 +118,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `UInt16` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: UInt16?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: UInt16?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .uint16)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -126,7 +126,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `UInt32` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: UInt32?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: UInt32?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .uint32)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
@@ -134,7 +134,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `UInt64` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: UInt64?) throws -> IntAttribute? {
+    func writeScalarAttribute(_ name: String, _ value: UInt64?) throws -> IntAttribute? {
         let datatype = Datatype(nativeType: .uint64)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return IntAttribute(id: id)
