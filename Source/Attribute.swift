@@ -63,7 +63,14 @@ open class Attribute {
 
 extension AttributedType {
     
-    func writeScalarAttribute<T>(_ name: String, _ value: T, datatype: Datatype) throws -> hid_t? {
+    @discardableResult
+    func writeScalarAttribute<T>(_ name: String, _ value: T?, datatype: Datatype) throws -> hid_t? {
+        guard let value = value else {
+            guard name.withCString({ name in
+                return H5Adelete(id, name)
+            }) >= 0 else { throw Error.ioError }
+            return nil
+        }
         let dataspace = Dataspace()
         let attributeID = name.withCString { name in
             return H5Acreate2(id, name, datatype.id, dataspace.id, 0, 0)

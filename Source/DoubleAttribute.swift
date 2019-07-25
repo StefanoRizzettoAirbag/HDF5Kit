@@ -62,7 +62,7 @@ public extension AttributedType {
     
     /// Creates and Writes a `Double` attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: Double) throws -> DoubleAttribute? {
+    public func writeScalarAttribute(_ name: String, _ value: Double?) throws -> DoubleAttribute? {
         let datatype = Datatype(nativeType: .double)
         guard let id = try writeScalarAttribute(name, value, datatype: datatype) else { return nil }
         return DoubleAttribute(id: id)

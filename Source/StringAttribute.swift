@@ -130,8 +130,11 @@ public extension AttributedType {
     
     /// Creates and Writes a `String` scalar attribute.
     @discardableResult
-    public func writeScalarAttribute(_ name: String, _ value: String) throws -> StringAttribute? {
-        guard let data = value.data(using: .utf8, allowLossyConversion: false) else {
+    public func writeScalarAttribute(_ name: String, _ value: String?) throws -> StringAttribute? {
+        guard let value = value, let data = value.data(using: .utf8, allowLossyConversion: false) else {
+            guard name.withCString({ name in
+                return H5Adelete(id, name)
+            }) >= 0 else { throw Error.ioError }
             return nil
         }
         
@@ -143,12 +146,12 @@ public extension AttributedType {
         guard attributeID >= 0 else {
             throw Error.ioError
         }
-        
         try value.utf8CString.withUnsafeBufferPointer { pointer in
             guard H5Awrite(attributeID, datatype.id, pointer.baseAddress) >= 0 else {
                 throw Error.ioError
             }
         }
+        
         
         return StringAttribute(id: attributeID)
     }
