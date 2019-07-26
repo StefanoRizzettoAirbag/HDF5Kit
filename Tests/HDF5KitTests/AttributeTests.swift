@@ -115,7 +115,7 @@ class AttributeTests: XCTestCase {
         }
     }
     
-    func testWriteReadNumbersScalar() {
+    func testWriteReadNumberScalar() {
         let filePath = tempFilePath()
         guard let file = File.create(filePath, mode: .truncate) else {
             fatalError("Failed to create file")
@@ -168,6 +168,28 @@ class AttributeTests: XCTestCase {
             }
             XCTAssertEqual(try attribute.read(), [writeData])
             XCTAssertEqual(group.doubleAttributeValue("Double"), writeData)
+        } catch {
+            XCTFail()
+        }
+        
+    }
+    
+    func testWriteReadBoolScalar() {
+        let filePath = tempFilePath()
+        guard let file = File.create(filePath, mode: .truncate) else {
+            fatalError("Failed to create file")
+        }
+        let group = file.createGroup("group")
+        XCTAssertEqual(group.name, "/group")
+        
+        do {
+            let writeData: Bool = true
+            guard let attribute = try group.writeScalarAttribute("Bool", writeData) else {
+                XCTFail()
+                return
+            }
+            XCTAssertEqual(try attribute.read(), [writeData])
+            XCTAssertEqual(group.boolAttributeValue("Bool"), writeData)
         } catch {
             XCTFail()
         }
