@@ -54,5 +54,26 @@ class DataspaceTests: XCTestCase {
         XCTAssertEqual(dataspace.dims[0], spaceHeight)
         XCTAssertEqual(dataspace.dims[1], spaceWidth)
     }
+    
+    
+    func testStringAppend() {
+        let filePath = tempFilePath()
+        let file = createFile(filePath)
+        
+        let createDims = [0]
+        let space = Dataspace(dims: createDims, maxDims: [-1])
+        let dataset = file.createStringDataset("Strings", dataspace: space, chunkDimensions: [1])!
+        
+        do {
+            let data = ["Rosso","Verde"]
+            try dataset.append(data, dimensions: [data.count])
+            XCTAssertEqual(dataset[0], ["Rosso"])
+            XCTAssertEqual(dataset[0..], data)
+        } catch {
+            XCTFail()
+        }
+        
+    }
+
 
 }
