@@ -63,6 +63,16 @@ open class Dataset: Object, AttributedType {
         }
     }
 
+    /// Read data using a Datatype, an optional memory Dataspace and an optional file Dataspace
+    ///
+    /// - precondition: The `selectionSize` of the memory Dataspace is the same as for the file Dataspace and there is enough memory available for it
+    open func read(into pointer: UnsafeMutableRawPointer, datatype: Datatype, memSpace: Dataspace? = nil, fileSpace: Dataspace? = nil) throws {
+        let status = H5Dread(id, datatype.id, memSpace?.id ?? 0, fileSpace?.id ?? 0, 0, pointer)
+        if status < 0 {
+            throw Error.ioError
+        }
+    }
+
     /// Write data using an optional memory Dataspace and an optional file Dataspace
     ///
     /// - precondition: The `selectionSize` of the memory Dataspace is the same as for the file Dataspace

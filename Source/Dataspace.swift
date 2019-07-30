@@ -9,7 +9,7 @@
 #endif
 
 public class Dataspace {
-    var id: hid_t
+    public internal(set) var id: hid_t
 
     init(id: hid_t) {
         self.id = id
