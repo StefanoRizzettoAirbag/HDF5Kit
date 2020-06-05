@@ -25,7 +25,7 @@ public class File: GroupType, AttributedType {
 
     public class func create(_ filePath: String, mode: CreateMode) -> File? {
         H5open()
-
+        
         var id: hid_t = -1
         filePath.withCString { filePath in
             id = H5Fcreate(filePath, mode.rawValue, 0, 0)
@@ -60,11 +60,11 @@ public class File: GroupType, AttributedType {
     }
 
     deinit {
+        let status = H5Fclose(id)
+        assert(status >= 0, "Failed to close HDF5 File")
         if openMode == .readWrite {
             NotificationCenter.default.post(name: .onFileClosed, object: nil)
         }
-        let status = H5Fclose(id)
-        assert(status >= 0, "Failed to close HDF5 File")
     }
 
     public func flush() {
