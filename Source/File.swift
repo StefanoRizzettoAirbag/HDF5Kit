@@ -10,6 +10,9 @@
 
 
 public class File: GroupType, AttributedType {
+    
+    private var openMode : OpenMode
+    
     public enum CreateMode: UInt32 {
         case truncate  = 0x02 // Overwrite existing files
         case exclusive = 0x04 // Fail if file already exists
@@ -43,12 +46,13 @@ public class File: GroupType, AttributedType {
         guard id >= 0 else {
             return nil
         }
-        return File(id: id)
+        return File(id: id, openMode: mode)
     }
 
     public internal(set) var id: hid_t = -1
 
-    init(id: hid_t) {
+    init(id: hid_t, openMode: OpenMode = .readOnly) {
+        self.openMode = openMode
         self.id = id
         guard id >= 0 else {
             fatalError("Failed to create HDF5 File")
@@ -56,7 +60,9 @@ public class File: GroupType, AttributedType {
     }
 
     deinit {
-        NotificationCenter.default.post(name: .onFileClosed, object: nil)
+        if openMode == .readWrite {
+            NotificationCenter.default.post(name: .onFileClosed, object: nil)
+        }
         let status = H5Fclose(id)
         assert(status >= 0, "Failed to close HDF5 File")
     }
