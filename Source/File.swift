@@ -8,6 +8,7 @@
     import CHDF5
 #endif
 
+
 public class File: GroupType, AttributedType {
     public enum CreateMode: UInt32 {
         case truncate  = 0x02 // Overwrite existing files
@@ -55,6 +56,7 @@ public class File: GroupType, AttributedType {
     }
 
     deinit {
+        NotificationCenter.default.post(name: .onFileClosed, object: nil)
         let status = H5Fclose(id)
         assert(status >= 0, "Failed to close HDF5 File")
     }
@@ -93,4 +95,9 @@ public class File: GroupType, AttributedType {
         let oid = name.withCString{ H5Oopen(id, $0, 0) }
         return Object(id: oid)
     }
+}
+
+
+extension Notification.Name {
+    static let onFileClosed : Notification.Name = Notification.Name("onFileClosed")
 }
