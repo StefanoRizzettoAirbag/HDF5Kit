@@ -51,7 +51,7 @@ public class File: GroupType, AttributedType {
 
     public internal(set) var id: hid_t = -1
 
-    init(id: hid_t, openMode: OpenMode = .readOnly) {
+    init(id: hid_t, openMode: OpenMode = .readWrite) {
         self.openMode = openMode
         self.id = id
         guard id >= 0 else {
