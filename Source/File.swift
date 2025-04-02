@@ -7,7 +7,7 @@
 #if SWIFT_PACKAGE
     import CHDF5
 #endif
-
+import Foundation
 
 public class File: GroupType, AttributedType {
     
