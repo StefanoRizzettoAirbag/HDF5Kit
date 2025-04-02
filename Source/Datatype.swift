@@ -8,11 +8,6 @@
 @preconcurrency import CHDF5
 #endif
 
-@globalActor
-actor GlobalIsolator {
-  static let shared = GlobalIsolator()
-}
-
 public enum DataClass: Int32 {
     case noClass   = -1  // error
     case integer   = 0   // integer types
