@@ -1,16 +1,15 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "CHDF5",
-        "repositoryURL": "https://github.com/aleph7/CHDF5.git",
-        "state": {
-          "branch": null,
-          "revision": "7cc74342b0bbaa784e310ddf4248c841c78e8354",
-          "version": "1.0.1"
-        }
+  "originHash" : "df415fa333f170563f95f261e58ff46236dbe26bac5312102693243f28dee954",
+  "pins" : [
+    {
+      "identity" : "chdf5",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jalebara/CHDF5",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a947569171ed2d9efa305f1e48903822b87f7066"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 3
 }

@@ -105,7 +105,7 @@ static herr_t H5FD_family_read(H5FD_t *_file, H5FD_mem_t type, hid_t dxpl_id, ha
 static herr_t H5FD_family_write(H5FD_t *_file, H5FD_mem_t type, hid_t dxpl_id, haddr_t addr,
 				size_t size, const void *_buf);
 static herr_t H5FD_family_flush(H5FD_t *_file, hid_t dxpl_id, unsigned closing);
-static herr_t H5FD_family_truncate(H5FD_t *_file, hid_t dxpl_id, unsigned closing);
+static herr_t H5FD_family_truncate(H5FD_t *_file, hid_t dxpl_id, hbool_t closing);
 static herr_t H5FD_family_lock(H5FD_t *_file, hbool_t rw);
 static herr_t H5FD_family_unlock(H5FD_t *_file);
 
@@ -139,7 +139,7 @@ static const H5FD_class_t H5FD_family_g = {
     H5FD_family_read,				/*read			*/
     H5FD_family_write,				/*write			*/
     H5FD_family_flush,				/*flush			*/
-    H5FD_family_truncate,			/*truncate		*/
+    H5FD_family_truncate,            /*truncate        */
     H5FD_family_lock,                           /*lock                  */
     H5FD_family_unlock,                         /*unlock                */
     H5FD_FLMAP_DICHOTOMY                        /*fl_map                */
@@ -1284,24 +1284,24 @@ done:
  *-------------------------------------------------------------------------
  */
 static herr_t
-H5FD_family_truncate(H5FD_t *_file, hid_t dxpl_id, unsigned closing)
+H5FD_family_truncate(H5FD_t *_file, hid_t dxpl_id, hbool_t closing)
 {
-    H5FD_family_t	*file = (H5FD_family_t*)_file;
-    unsigned		u, nerrors = 0;
-    herr_t      	ret_value = SUCCEED;       /* Return value */
+    H5FD_family_t *file = (H5FD_family_t *)_file;
+    unsigned u, nerrors = 0;
+    herr_t ret_value = SUCCEED; /* Return value */
 
     FUNC_ENTER_NOAPI_NOINIT
 
-    for(u = 0; u < file->nmembs; u++)
-        if(file->memb[u] && H5FD_truncate(file->memb[u], dxpl_id, closing) < 0)
+    for (u = 0; u < file->nmembs; u++)
+        if (file->memb[u] && H5FD_truncate(file->memb[u], dxpl_id, closing) < 0)
             nerrors++;
 
-    if(nerrors)
-        HGOTO_ERROR(H5E_IO, H5E_BADVALUE, FAIL, "unable to flush member files")
+    if (nerrors)
+        HGOTO_ERROR(H5E_IO, H5E_BADVALUE, FAIL, "unable to truncate member files")
 
 done:
     FUNC_LEAVE_NOAPI(ret_value)
-} /* end H5FD_family_truncate() */
+}
 
 
 /*-------------------------------------------------------------------------
