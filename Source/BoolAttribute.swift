@@ -36,7 +36,7 @@ public extension AttributedType {
     /// Get `Bool` attribute scalar or first value
     func boolAttributeValue(_ name: String) -> Bool? {
         guard let values = try? openBoolAttribute(name)?.read() else { return nil }
-        return values?.first
+        return values.first
     }
     
     /// Creates a `Bool` attribute.

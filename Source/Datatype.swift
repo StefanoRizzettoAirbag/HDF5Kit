@@ -5,8 +5,13 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #if SWIFT_PACKAGE
-    import CHDF5
+@preconcurrency import CHDF5
 #endif
+
+@globalActor
+actor GlobalIsolator {
+  static let shared = GlobalIsolator()
+}
 
 public enum DataClass: Int32 {
     case noClass   = -1  // error
@@ -39,6 +44,7 @@ public class Datatype : Object, Equatable {
     }
 
     /// Create a Datatype from a Swift type
+
     public convenience init?(type: Any.Type) {
         let id: hid_t
         if type == String.self {

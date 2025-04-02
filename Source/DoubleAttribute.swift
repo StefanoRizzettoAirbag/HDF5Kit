@@ -5,7 +5,7 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #if SWIFT_PACKAGE
-    import CHDF5
+    @preconcurrency import CHDF5
 #endif
 
 open class DoubleAttribute: Attribute {
@@ -35,7 +35,7 @@ public extension AttributedType {
     /// Get `Double` attribute scalar or first value
     func doubleAttributeValue(_ name: String) -> Double? {
         guard let values = try? openDoubleAttribute(name)?.read() else { return nil }
-        return values?.first
+        return values.first
     }
     
     /// Creates a `Double` attribute.

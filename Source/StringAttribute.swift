@@ -102,7 +102,7 @@ public extension AttributedType {
     /// Get `String` attribute scalar or first value
     func stringAttributeValue(_ name: String) -> String? {
         guard let values = try? openStringAttribute(name)?.read() else { return nil }
-        return values?.first
+        return values.first
     }
     
     /// Creates a `String` attribute.

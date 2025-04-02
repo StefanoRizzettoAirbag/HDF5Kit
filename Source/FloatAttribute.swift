@@ -5,7 +5,7 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #if SWIFT_PACKAGE
-    import CHDF5
+    @preconcurrency import CHDF5
 #endif
 
 open class FloatAttribute: Attribute {
@@ -35,7 +35,7 @@ public extension AttributedType {
     /// Get `Float` attribute scalar or first value
     func floatAttributeValue(_ name: String) -> Float? {
         guard let values = try? openFloatAttribute(name)?.read() else { return nil }
-        return values?.first
+        return values.first
     }
     
     /// Creates a `Float` attribute.
