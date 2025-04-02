@@ -15,7 +15,9 @@ let package = Package(
     targets: [
         .target(
             name: "HDF5Kit",
-            dependencies: [],
+            dependencies: [
+                "CHDF5"
+            ],
             path: "Source"),
         .testTarget(
             name: "HDF5KitTests",
