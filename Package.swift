@@ -10,7 +10,7 @@ let package = Package(
             targets: ["HDF5Kit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/jalebara/CHDF5", branch: "master")
+        .package(url: "https://github.com/StefanoRizzettoAirbag/CHDF5", branch: "master")
     ],
     targets: [
         .target(

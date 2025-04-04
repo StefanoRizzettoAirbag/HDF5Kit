@@ -1,10 +1,10 @@
 {
-  "originHash" : "df415fa333f170563f95f261e58ff46236dbe26bac5312102693243f28dee954",
+  "originHash" : "f3cc292ca7ad453ee6d20f669d815ed16bb4d7e9cddf338cb5f4a6c2c6e56d13",
   "pins" : [
     {
       "identity" : "chdf5",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jalebara/CHDF5",
+      "location" : "https://github.com/StefanoRizzettoAirbag/CHDF5",
       "state" : {
         "branch" : "master",
         "revision" : "a947569171ed2d9efa305f1e48903822b87f7066"
