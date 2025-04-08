@@ -1,0 +1,151 @@
+Performing Other Test HAVE_TM_ZONE failed with the following output:
+Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_441f1/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_441f1.dir/build.make CMakeFiles/cmTC_441f1.dir/build
+Building C object CMakeFiles/cmTC_441f1.dir/HDFTests.c.o
+/usr/bin/cc   -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk   -DHAVE_TM_ZONE  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -MD -MT CMakeFiles/cmTC_441f1.dir/HDFTests.c.o -MF CMakeFiles/cmTC_441f1.dir/HDFTests.c.o.d -o CMakeFiles/cmTC_441f1.dir/HDFTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/HDFTests.c
+Linking C executable cmTC_441f1
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_441f1.dir/link.txt --verbose=1
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+      <initial-undefines>
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+/usr/bin/cc  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_441f1.dir/HDFTests.c.o -o cmTC_441f1  -lm -ldl
+make[1]: *** [cmTC_441f1] Error 1
+make: *** [cmTC_441f1/fast] Error 2
+
+
+Performing Other Test HAVE_STRUCT_TM_TM_ZONE failed with the following output:
+Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7c341/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_7c341.dir/build.make CMakeFiles/cmTC_7c341.dir/build
+Building C object CMakeFiles/cmTC_7c341.dir/HDFTests.c.o
+/usr/bin/cc   -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk   -DHAVE_STRUCT_TM_TM_ZONE  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -MD -MT CMakeFiles/cmTC_7c341.dir/HDFTests.c.o -MF CMakeFiles/cmTC_7c341.dir/HDFTests.c.o.d -o CMakeFiles/cmTC_7c341.dir/HDFTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/HDFTests.c
+Linking C executable cmTC_7c341
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c341.dir/link.txt --verbose=1
+Undefined symbols for architecture x86_64:
+  "_main", referenced from:
+      <initial-undefines>
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+/usr/bin/cc  -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7c341.dir/HDFTests.c.o -o cmTC_7c341  -lm -ldl
+make[1]: *** [cmTC_7c341] Error 1
+make: *** [cmTC_7c341/fast] Error 2
+
+
+Test H5_LDOUBLE_TO_LONG_SPECIAL Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d4a37/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_d4a37.dir/build.make CMakeFiles/cmTC_d4a37.dir/build
+Building C object CMakeFiles/cmTC_d4a37.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LDOUBLE_TO_LONG_SPECIAL_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -MD -MT CMakeFiles/cmTC_d4a37.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_d4a37.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_d4a37.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_d4a37
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4a37.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LDOUBLE_TO_LONG_SPECIAL_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d4a37.dir/ConversionTests.c.o -o cmTC_d4a37
+
+
+Test H5_LDOUBLE_TO_LONG_SPECIAL Run failed with exit code FAILED_TO_RUN and with the following output:
+ dyld[19192]: DYLD_ROOT_PATH not set for simulator program
+Subprocess aborted
+Test H5_LONG_TO_LDOUBLE_SPECIAL Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_12682/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_12682.dir/build.make CMakeFiles/cmTC_12682.dir/build
+Building C object CMakeFiles/cmTC_12682.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LONG_TO_LDOUBLE_SPECIAL_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -MD -MT CMakeFiles/cmTC_12682.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_12682.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_12682.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_12682
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12682.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LONG_TO_LDOUBLE_SPECIAL_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_12682.dir/ConversionTests.c.o -o cmTC_12682
+
+
+Test H5_LONG_TO_LDOUBLE_SPECIAL Run failed with exit code FAILED_TO_RUN and with the following output:
+ dyld[19238]: DYLD_ROOT_PATH not set for simulator program
+Subprocess aborted
+Test H5_LDOUBLE_TO_LLONG_ACCURATE Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_77afe/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_77afe.dir/build.make CMakeFiles/cmTC_77afe.dir/build
+Building C object CMakeFiles/cmTC_77afe.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LDOUBLE_TO_LLONG_ACCURATE_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -MD -MT CMakeFiles/cmTC_77afe.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_77afe.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_77afe.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_77afe
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77afe.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LDOUBLE_TO_LLONG_ACCURATE_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_77afe.dir/ConversionTests.c.o -o cmTC_77afe
+
+
+Test H5_LDOUBLE_TO_LLONG_ACCURATE Run failed with exit code FAILED_TO_RUN and with the following output:
+ dyld[19284]: DYLD_ROOT_PATH not set for simulator program
+Subprocess aborted
+Test H5_LLONG_TO_LDOUBLE_CORRECT Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_19b2b/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_19b2b.dir/build.make CMakeFiles/cmTC_19b2b.dir/build
+Building C object CMakeFiles/cmTC_19b2b.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LLONG_TO_LDOUBLE_CORRECT_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -MD -MT CMakeFiles/cmTC_19b2b.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_19b2b.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_19b2b.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_19b2b
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19b2b.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LLONG_TO_LDOUBLE_CORRECT_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_19b2b.dir/ConversionTests.c.o -o cmTC_19b2b
+
+
+Test H5_LLONG_TO_LDOUBLE_CORRECT Run failed with exit code FAILED_TO_RUN and with the following output:
+ dyld[19330]: DYLD_ROOT_PATH not set for simulator program
+Subprocess aborted
+Test H5_DISABLE_SOME_LDOUBLE_CONV Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_55f87/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_55f87.dir/build.make CMakeFiles/cmTC_55f87.dir/build
+Building C object CMakeFiles/cmTC_55f87.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_DISABLE_SOME_LDOUBLE_CONV_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -MD -MT CMakeFiles/cmTC_55f87.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_55f87.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_55f87.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_55f87
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55f87.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_DISABLE_SOME_LDOUBLE_CONV_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_55f87.dir/ConversionTests.c.o -o cmTC_55f87
+
+
+Test H5_DISABLE_SOME_LDOUBLE_CONV Run failed with exit code FAILED_TO_RUN and with the following output:
+ dyld[19376]: DYLD_ROOT_PATH not set for simulator program
+Subprocess aborted
+Test H5_FLOAT16_CONVERSION_FUNCS_LINK Compile failed with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_135a0/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_135a0.dir/build.make CMakeFiles/cmTC_135a0.dir/build
+Building C object CMakeFiles/cmTC_135a0.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_FLOAT16_CONVERSION_FUNCS_LINK_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -MD -MT CMakeFiles/cmTC_135a0.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_135a0.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_135a0.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_135a0
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_135a0.dir/link.txt --verbose=1
+Undefined symbols for architecture x86_64:
+  "___truncxfhf2", referenced from:
+      _main in ConversionTests.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+/usr/bin/cc  -DH5_FLOAT16_CONVERSION_FUNCS_LINK_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_135a0.dir/ConversionTests.c.o -o cmTC_135a0
+make[1]: *** [cmTC_135a0] Error 1
+make: *** [cmTC_135a0/fast] Error 2
+
+
+Test H5_FLOAT16_CONVERSION_FUNCS_LINK_NO_FLAGS Compile failed with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-x86_64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7ac83/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_7ac83.dir/build.make CMakeFiles/cmTC_7ac83.dir/build
+Building C object CMakeFiles/cmTC_7ac83.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_FLOAT16_CONVERSION_FUNCS_LINK_NO_FLAGS_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -MD -MT CMakeFiles/cmTC_7ac83.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_7ac83.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_7ac83.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_7ac83
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ac83.dir/link.txt --verbose=1
+Undefined symbols for architecture x86_64:
+  "___truncxfhf2", referenced from:
+      _main in ConversionTests.c.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+/usr/bin/cc  -DH5_FLOAT16_CONVERSION_FUNCS_LINK_NO_FLAGS_TEST -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7ac83.dir/ConversionTests.c.o -o cmTC_7ac83
+make[1]: *** [cmTC_7ac83] Error 1
+make: *** [cmTC_7ac83/fast] Error 2
+
+

@@ -1,0 +1,136 @@
+Performing Other Test HAVE_TM_ZONE failed with the following output:
+Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_db278/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_db278.dir/build.make CMakeFiles/cmTC_db278.dir/build
+Building C object CMakeFiles/cmTC_db278.dir/HDFTests.c.o
+/usr/bin/cc   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk   -DHAVE_TM_ZONE  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -MD -MT CMakeFiles/cmTC_db278.dir/HDFTests.c.o -MF CMakeFiles/cmTC_db278.dir/HDFTests.c.o.d -o CMakeFiles/cmTC_db278.dir/HDFTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/HDFTests.c
+Linking C executable cmTC_db278
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_db278.dir/link.txt --verbose=1
+Undefined symbols for architecture arm64:
+  "_main", referenced from:
+      <initial-undefines>
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+/usr/bin/cc  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_db278.dir/HDFTests.c.o -o cmTC_db278  -lm -ldl
+make[1]: *** [cmTC_db278] Error 1
+make: *** [cmTC_db278/fast] Error 2
+
+
+Performing Other Test HAVE_STRUCT_TM_TM_ZONE failed with the following output:
+Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1a7d9/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1a7d9.dir/build.make CMakeFiles/cmTC_1a7d9.dir/build
+Building C object CMakeFiles/cmTC_1a7d9.dir/HDFTests.c.o
+/usr/bin/cc   -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk   -DHAVE_STRUCT_TM_TM_ZONE  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -MD -MT CMakeFiles/cmTC_1a7d9.dir/HDFTests.c.o -MF CMakeFiles/cmTC_1a7d9.dir/HDFTests.c.o.d -o CMakeFiles/cmTC_1a7d9.dir/HDFTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/HDFTests.c
+Linking C executable cmTC_1a7d9
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a7d9.dir/link.txt --verbose=1
+Undefined symbols for architecture arm64:
+  "_main", referenced from:
+      <initial-undefines>
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+/usr/bin/cc  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1a7d9.dir/HDFTests.c.o -o cmTC_1a7d9  -lm -ldl
+make[1]: *** [cmTC_1a7d9] Error 1
+make: *** [cmTC_1a7d9/fast] Error 2
+
+
+Test H5_LDOUBLE_TO_LONG_SPECIAL Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d3de9/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_d3de9.dir/build.make CMakeFiles/cmTC_d3de9.dir/build
+Building C object CMakeFiles/cmTC_d3de9.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LDOUBLE_TO_LONG_SPECIAL_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -MD -MT CMakeFiles/cmTC_d3de9.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_d3de9.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_d3de9.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_d3de9
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3de9.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LDOUBLE_TO_LONG_SPECIAL_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d3de9.dir/ConversionTests.c.o -o cmTC_d3de9
+
+
+Test H5_LDOUBLE_TO_LONG_SPECIAL Run failed with exit code FAILED_TO_RUN and with the following output:
+ Subprocess killed
+Test H5_LONG_TO_LDOUBLE_SPECIAL Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_11c67/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_11c67.dir/build.make CMakeFiles/cmTC_11c67.dir/build
+Building C object CMakeFiles/cmTC_11c67.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LONG_TO_LDOUBLE_SPECIAL_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -MD -MT CMakeFiles/cmTC_11c67.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_11c67.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_11c67.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_11c67
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_11c67.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LONG_TO_LDOUBLE_SPECIAL_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_11c67.dir/ConversionTests.c.o -o cmTC_11c67
+
+
+Test H5_LONG_TO_LDOUBLE_SPECIAL Run failed with exit code FAILED_TO_RUN and with the following output:
+ Subprocess killed
+Test H5_LDOUBLE_TO_LLONG_ACCURATE Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ffa18/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_ffa18.dir/build.make CMakeFiles/cmTC_ffa18.dir/build
+Building C object CMakeFiles/cmTC_ffa18.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LDOUBLE_TO_LLONG_ACCURATE_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -MD -MT CMakeFiles/cmTC_ffa18.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_ffa18.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_ffa18.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_ffa18
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ffa18.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LDOUBLE_TO_LLONG_ACCURATE_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ffa18.dir/ConversionTests.c.o -o cmTC_ffa18
+
+
+Test H5_LDOUBLE_TO_LLONG_ACCURATE Run failed with exit code FAILED_TO_RUN and with the following output:
+ Subprocess killed
+Test H5_LLONG_TO_LDOUBLE_CORRECT Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0e28c/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_0e28c.dir/build.make CMakeFiles/cmTC_0e28c.dir/build
+Building C object CMakeFiles/cmTC_0e28c.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_LLONG_TO_LDOUBLE_CORRECT_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -MD -MT CMakeFiles/cmTC_0e28c.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_0e28c.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_0e28c.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_0e28c
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e28c.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_LLONG_TO_LDOUBLE_CORRECT_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0e28c.dir/ConversionTests.c.o -o cmTC_0e28c
+
+
+Test H5_LLONG_TO_LDOUBLE_CORRECT Run failed with exit code FAILED_TO_RUN and with the following output:
+ Subprocess killed
+Test H5_DISABLE_SOME_LDOUBLE_CONV Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1d2d6/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1d2d6.dir/build.make CMakeFiles/cmTC_1d2d6.dir/build
+Building C object CMakeFiles/cmTC_1d2d6.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_DISABLE_SOME_LDOUBLE_CONV_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -MD -MT CMakeFiles/cmTC_1d2d6.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_1d2d6.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_1d2d6.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_1d2d6
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d2d6.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_DISABLE_SOME_LDOUBLE_CONV_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1d2d6.dir/ConversionTests.c.o -o cmTC_1d2d6
+
+
+Test H5_DISABLE_SOME_LDOUBLE_CONV Run failed with exit code FAILED_TO_RUN and with the following output:
+ Subprocess killed
+Test H5_FLOAT16_CONVERSION_FUNCS_LINK Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_26eb3/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_26eb3.dir/build.make CMakeFiles/cmTC_26eb3.dir/build
+Building C object CMakeFiles/cmTC_26eb3.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_FLOAT16_CONVERSION_FUNCS_LINK_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -MD -MT CMakeFiles/cmTC_26eb3.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_26eb3.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_26eb3.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_26eb3
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26eb3.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_FLOAT16_CONVERSION_FUNCS_LINK_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_26eb3.dir/ConversionTests.c.o -o cmTC_26eb3
+
+
+Test H5_FLOAT16_CONVERSION_FUNCS_LINK Run failed with exit code FAILED_TO_RUN and with the following output:
+ Subprocess killed
+Test H5_FLOAT16_CONVERSION_FUNCS_LINK_NO_FLAGS Compile succeeded with the following output:
+ Change Dir: '/Users/stefanorizzetto/Documents/HDF5Kit/build/iphoneos-arm64/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4d61f/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_4d61f.dir/build.make CMakeFiles/cmTC_4d61f.dir/build
+Building C object CMakeFiles/cmTC_4d61f.dir/ConversionTests.c.o
+/usr/bin/cc   -DH5_FLOAT16_CONVERSION_FUNCS_LINK_NO_FLAGS_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -MD -MT CMakeFiles/cmTC_4d61f.dir/ConversionTests.c.o -MF CMakeFiles/cmTC_4d61f.dir/ConversionTests.c.o.d -o CMakeFiles/cmTC_4d61f.dir/ConversionTests.c.o -c /Users/stefanorizzetto/Documents/HDF5Kit/hdf5-1.14.6/config/cmake/ConversionTests.c
+Linking C executable cmTC_4d61f
+/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d61f.dir/link.txt --verbose=1
+/usr/bin/cc  -DH5_FLOAT16_CONVERSION_FUNCS_LINK_NO_FLAGS_TEST -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4d61f.dir/ConversionTests.c.o -o cmTC_4d61f
+
+
+Test H5_FLOAT16_CONVERSION_FUNCS_LINK_NO_FLAGS Run failed with exit code FAILED_TO_RUN and with the following output:
+ Subprocess killed

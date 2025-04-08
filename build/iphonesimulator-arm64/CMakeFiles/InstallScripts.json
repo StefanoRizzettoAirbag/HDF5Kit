@@ -1,0 +1,17 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/src/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/src/H5FDsubfiling/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/test/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/utils/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/utils/test/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/utils/mirror_vfd/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/utils/subfiling_vfd/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/hl/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/hl/src/cmake_install.cmake",
+		"/Users/stefanorizzetto/Documents/HDF5Kit/build/iphonesimulator-arm64/hl/test/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

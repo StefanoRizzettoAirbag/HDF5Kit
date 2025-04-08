@@ -23,22 +23,26 @@ if [ ! -d "$SRC_DIR" ]; then
   rm hdf5.tar.gz
 fi
 
-ARCHS=("arm64")
+rm -rf "$BUILD_DIR" "$INSTALL_DIR" "$UNIVERSAL_DIR" "$XCFRAMEWORK_NAME"
 
-for ARCH in "${ARCHS[@]}"; do
-  echo "🔧 Building for iOS Simulator: $ARCH"
+build_arch () {
+  PLATFORM=$1
+  ARCH=$2
+  SYSROOT=$3
 
-  BUILD_ARCH_DIR="$BUILD_DIR/ios-sim-$ARCH"
-  INSTALL_ARCH_DIR="$INSTALL_DIR/ios-sim-$ARCH"
+  echo "🔧 Building for $PLATFORM ($ARCH)..."
 
-  mkdir -p "$BUILD_ARCH_DIR"
-  cd "$BUILD_ARCH_DIR"
+  BUILD_PATH="$BUILD_DIR/$PLATFORM-$ARCH"
+  INSTALL_PATH="$INSTALL_DIR/$PLATFORM-$ARCH"
+
+  mkdir -p "$BUILD_PATH"
+  cd "$BUILD_PATH"
 
   cmake "$SRC_DIR" \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_OSX_SYSROOT=iphonesimulator \
+    -DCMAKE_OSX_SYSROOT=$SYSROOT \
     -DCMAKE_OSX_ARCHITECTURES=$ARCH \
-    -DCMAKE_INSTALL_PREFIX="$INSTALL_ARCH_DIR" \
+    -DCMAKE_INSTALL_PREFIX="$INSTALL_PATH" \
     -DBUILD_SHARED_LIBS=OFF \
     -DHDF5_BUILD_TOOLS=OFF \
     -DHDF5_BUILD_EXAMPLES=OFF \
@@ -48,19 +52,29 @@ for ARCH in "${ARCHS[@]}"; do
 
   make -j$(sysctl -n hw.logicalcpu)
   make install
-  cd "$ROOT_DIR"
-done
+}
 
-echo "📦 Creating universal static lib..."
-mkdir -p "$UNIVERSAL_DIR"
+# Build for physical device (iphoneos arm64)
+build_arch iphoneos arm64 iphoneos
 
+# Build for simulator (iphonesimulator arm64 and x86_64)
+build_arch iphonesimulator arm64 iphonesimulator
+build_arch iphonesimulator x86_64 iphonesimulator
+
+# Combine simulator libs (arm64 + x86_64)
+mkdir -p "$UNIVERSAL_DIR/simulator"
 lipo -create \
-  "$INSTALL_DIR/ios-sim-arm64/lib/libhdf5.a" \
-  -output "$UNIVERSAL_DIR/libhdf5.a"
+  "$INSTALL_DIR/iphonesimulator-arm64/lib/libhdf5.a" \
+  "$INSTALL_DIR/iphonesimulator-x86_64/lib/libhdf5.a" \
+  -output "$UNIVERSAL_DIR/simulator/libhdf5.a"
 
-echo "📁 Preparing headers and module.modulemap..."
+# Device lib
+mkdir -p "$UNIVERSAL_DIR/device"
+cp "$INSTALL_DIR/iphoneos-arm64/lib/libhdf5.a" "$UNIVERSAL_DIR/device/libhdf5.a"
+
+# Headers (only needed once)
 mkdir -p "$HEADERS_DIR"
-cp -R "$INSTALL_DIR/ios-sim-arm64/include/"* "$HEADERS_DIR/"
+cp -R "$INSTALL_DIR/iphoneos-arm64/include/"* "$HEADERS_DIR/"
 
 cat > "$HEADERS_DIR/module.modulemap" <<EOF
 module HDF5 [system] {
@@ -72,8 +86,8 @@ EOF
 echo "📦 Creating .xcframework..."
 rm -rf "$XCFRAMEWORK_NAME"
 xcodebuild -create-xcframework \
-  -library "$UNIVERSAL_DIR/libhdf5.a" \
-  -headers "$HEADERS_DIR" \
+  -library "$UNIVERSAL_DIR/device/libhdf5.a" -headers "$HEADERS_DIR" \
+  -library "$UNIVERSAL_DIR/simulator/libhdf5.a" -headers "$HEADERS_DIR" \
   -output "$XCFRAMEWORK_NAME"
 
 echo "✅ Done! XCFramework is at: $XCFRAMEWORK_NAME"
