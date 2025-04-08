@@ -5,7 +5,7 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #if SWIFT_PACKAGE
-    @preconcurrency import CHDF5
+@preconcurrency import HDF5
 #endif
 
 public protocol AttributedType {

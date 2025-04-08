@@ -10,17 +10,17 @@ let package = Package(
             targets: ["HDF5Kit"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/StefanoRizzettoAirbag/CHDF5", branch: "master")
+        //.package(url: "https://github.com/StefanoRizzettoAirbag/CHDF5", branch: "test")
     ],
     targets: [
-        .target(
-            name: "HDF5Kit",
-            dependencies: [
-                "CHDF5"
-            ],
-            path: "Source"),
-        .testTarget(
-            name: "HDF5KitTests",
-            dependencies: ["HDF5Kit"]),
-    ]
+            .target(
+                name: "HDF5Kit",
+                dependencies: ["HDF5"],
+                path: "Source"
+            ),
+            .binaryTarget(
+                name: "HDF5",
+                path: "HDF5.xcframework"
+            )
+        ]
 )

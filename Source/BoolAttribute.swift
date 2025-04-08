@@ -7,7 +7,7 @@
 //
 
 #if SWIFT_PACKAGE
-import CHDF5
+import HDF5
 #endif
 
 open class BoolAttribute: Attribute {

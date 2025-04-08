@@ -7,8 +7,8 @@
 import HDF5Kit
 
 func tempFilePath() -> String {
-    let fileName = ProcessInfo.processInfo.globallyUniqueString + ".hdf"
-    return NSTemporaryDirectory() + "/" + fileName
+    let fileName = "test.hdf"
+    return fileName
 }
 
 func createFile(_ filePath: String) -> File {
